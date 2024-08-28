@@ -1,0 +1,66 @@
+                                                                        Exercise 1.1.1
+
+Q 1->Run git help at the command line. What is the first command listed?
+
+A:
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+
+
+Q 2->There’s a chance that the full output of git help was too big to fit in your terminal, with most of it just scrolling by. 
+What’s the command to let us navigate the output of git help interactively? (On some systems, you can use the mouse to scroll back in the terminal window, 
+but it’s unwise to rely on this fact.) Hint: Pipe the output to less.
+
+A:
+git help | less
+
+
+Q 3->Git stores global configuration settings in a hidden text file located in your home directory. 
+By inspecting the file ~/.gitconfig with a tool of your choice (cat, less, a text editor, etc.), 
+confirm that the configuration set up by Listing 1.3 corresponds to simple text entries in this file. 
+
+A:
+mohdmaaz@Lenovo:/$ cat ~/.gitconfig
+[user]
+	email = mohdmaazshk@gmail.com
+	name = mohdmaaz
+[init]
+	defaultBranch = main
+
+
+                                                                        Exercise 1.2.1
+
+Q 1-> By running ls -a (discussed in Learn Enough Command Line to Be Dangerous), list all the files and directories in your website directory.
+
+A:
+mohdmaaz@Lenovo:~/repos/website$ ls -a
+.  ..  .git
+
+What is the name of the hidden directory used by the Git repository? (There is one such hidden directory per project.) 
+
+.git
+
+Q 2-> Using the result of the previous exercise, run ls on the hidden directory and guess the name of the main Git configuration file. 
+Use cat to dump its contents to the screen.  
+
+A:
+ls -a .git 
+mohdmaaz@Lenovo:~/repos/website$ ls -a .git
+.  ..  branches  config  description  HEAD  hooks  info  objects  refs
+
+Main Git configuration file -> config
+
+Content of git.config
+mohdmaaz@Lenovo:~/repos/website$ cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+
+
+
